@@ -16,7 +16,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         image.backgroundColor = .label
         image.layer.masksToBounds = true
         image.layer.cornerRadius = 6
-        
         return image
     }()
     
@@ -25,7 +24,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .left
         label.textColor = .label
         label.font = .systemFont(ofSize: 14)
-        
         return label
     }()
     
@@ -34,7 +32,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .left
         label.textColor = .systemGray
         label.font = .systemFont(ofSize: 14)
-        
         return label
     }()
     
@@ -54,7 +51,6 @@ class AlbumCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(albumImage)
         contentView.addSubview(albumTitle)
         contentView.addSubview(albumAmount)
-        
     }
     
     public func configurationContentOfCell(with model: AlbumCell) {

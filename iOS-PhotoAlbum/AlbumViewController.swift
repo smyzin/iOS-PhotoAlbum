@@ -23,14 +23,14 @@ class AlbumViewController: UIViewController {
     var models = [Models]()
     
     private let sectionAlbums = SectionAlbum(
-        item: ItemSectionOptions(height: 0.95, width: 0.95, table: false),
-        group: GroupSectionOptions(height: 1.25, width: 0.5, count: 2),
+        item: ItemSectionOptions(height: 1.05, width: 1.05, table: false),
+        group: GroupSectionOptions(height: 1.25, width: 0.47, count: 2),
         section: SectionOptions(top: 0, leading: 5, bottom: 0, trailing: 5)
     )
     private let sectionByPlacesAndGroups = SectionAlbum(
-        item: ItemSectionOptions(height: 1, width: 1, table: false),
-        group: GroupSectionOptions(height: 0.72, width: 0.47, count: 1),
-        section: SectionOptions(top: 0, leading: 15, bottom: 0, trailing: 15)
+        item: ItemSectionOptions(height: 1.05, width: 1.05, table: false),
+        group: GroupSectionOptions(height: 0.65, width: 0.47, count: 1),
+        section: SectionOptions(top: 0, leading: 5, bottom: 0, trailing: 5)
     )
     private let sectionMediaTypes = SectionAlbum(
         item: ItemSectionOptions(height: 0.1, width: 1, table: true),
@@ -50,7 +50,6 @@ class AlbumViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
         return collectionView
     }()
     
@@ -71,7 +70,6 @@ class AlbumViewController: UIViewController {
         
     func generateSectionsLayout() -> UICollectionViewLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
-            
             switch sectionIndex {
             case 0: return self.createAndConfigureSection(self.sectionAlbums)
             case 1: return self.createAndConfigureSection(self.sectionByPlacesAndGroups)
@@ -83,9 +81,7 @@ class AlbumViewController: UIViewController {
     
     // MARK: - Configure
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumHeader.id, for: indexPath) as! AlbumHeader
-        
         let section = indexPath.section
         
         switch (section) {

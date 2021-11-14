@@ -16,7 +16,6 @@ class AlbumHeader: UICollectionReusableView {
         label.textColor = .label
         label.font = .boldSystemFont(ofSize: 20)
         label.textAlignment = .left
-        
         return label
     }()
 
@@ -24,7 +23,6 @@ class AlbumHeader: UICollectionReusableView {
         let label = UILabel()
         label.textColor = .systemBlue
         label.textAlignment = .right
-        
         return label
     }()
     

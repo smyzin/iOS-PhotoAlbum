@@ -99,9 +99,18 @@ extension AlbumViewController {
                 image: #imageLiteral(resourceName: "Polarr"),
                 title: "Polarr",
                 amount: 9)
+            ),
+            .albumCell(content: AlbumCell(
+                image: #imageLiteral(resourceName: "Lightroom"),
+                title: "Lightroom",
+                amount: 2)
+            ),
+            .albumCell(content: AlbumCell(
+                image: #imageLiteral(resourceName: "Boomerang"),
+                title: "Boomerang",
+                amount: 46)
             )]
         ))
-        
         models.append(Models(typesSection: [
             .albumCell(content: AlbumCell(
                 image: #imageLiteral(resourceName: "People"),
@@ -112,9 +121,18 @@ extension AlbumViewController {
                 image: #imageLiteral(resourceName: "Map"),
                 title: "Places",
                 amount: 848)
+            ),
+            .albumCell(content: AlbumCell(
+                image: #imageLiteral(resourceName: "Screenshots"),
+                title: "Screenshots",
+                amount: 452)
+            ),
+            .albumCell(content: AlbumCell(
+                image: #imageLiteral(resourceName: "EyeEm"),
+                title: "EyeEm",
+                amount: 3)
             )]
         ))
-        
         models.append(Models(typesSection: [
             .tableCell(content: TableCell(
                 icon: UIImage(systemName: "video"),
@@ -157,9 +175,7 @@ extension AlbumViewController {
                 amount: 1)
             )]
         ))
-        
         models.append(Models(typesSection: [
-            
             .tableCell(content: TableCell(
                 icon: UIImage(systemName: "square.and.arrow.down"),
                 title: "Imports",
@@ -191,8 +207,6 @@ extension AlbumViewController {
         )
         section.orthogonalScrollingBehavior = .groupPaging
         section.boundarySupplementaryItems = [configureSectionTitle()]
-
-        
         return section
     }
     
@@ -206,7 +220,6 @@ extension AlbumViewController {
         item.contentInsets = options.table
             ? NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
             : NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
         return item
     }
     
@@ -218,7 +231,6 @@ extension AlbumViewController {
             ? NSCollectionLayoutGroup.vertical(layoutSize: size, subitem: item, count: options.count)
             : NSCollectionLayoutGroup.vertical(layoutSize: size, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-        
         return group
     }
     
@@ -237,7 +249,6 @@ extension AlbumViewController {
             trailing: 0)
         title.pinToVisibleBounds = false
         title.zIndex = Int.max
-        
         return title
     }
 }

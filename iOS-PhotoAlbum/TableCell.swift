@@ -13,28 +13,27 @@ class TableCollectionViewCell: UICollectionViewCell {
     // MARK: - Elements
     let iconContainer: UIView = {
         let view = UIView()
-        
         return view
     }()
+    
     let iconView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .systemBackground
         image.tintColor = .systemBlue
         image.contentMode = .scaleAspectFit
-        
         return image
     }()
+    
     let labelTitle: UILabel = {
         let label = UILabel()
         label.textColor = .systemBlue
         label.numberOfLines = 1
-        
         return label
     }()
+    
     let labelAmount: UILabel = {
         let label = UILabel()
         label.textColor = .systemGray
-        
         return label
     }()
     
@@ -58,10 +57,8 @@ class TableCollectionViewCell: UICollectionViewCell {
     private func setupHierarchy() {
         contentView.addSubview(iconContainer)
         iconContainer.addSubview(iconView)
-        
         contentView.addSubview(labelTitle)
         contentView.addSubview(labelAmount)
-        
     }
     
     // MARK: - Setup
